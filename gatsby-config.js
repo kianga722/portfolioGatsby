@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-  pathPrefix: "/gatsbyPortfolio",
+  pathPrefix: "/portfolioGatsby",
   plugins: [
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
