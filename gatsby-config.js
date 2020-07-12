@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  pathPrefix: "/gatsbyPortfolio",
   plugins: [
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
@@ -15,7 +15,7 @@ module.exports = {
               variants: [`400`, `700`]
           }],
       },
-  },  
+    },  
     `gatsby-plugin-styled-components`,
   ],
 }
