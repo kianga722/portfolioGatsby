@@ -7,15 +7,7 @@
 module.exports = {
   pathPrefix: "/portfolioGatsby",
   plugins: [
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-      fonts: [{
-              family: `Tangerine`,
-              variants: [`400`, `700`]
-          }],
-      },
-    },  
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
   ],
 }

@@ -4,54 +4,12 @@ const ProfileStyles = styled.header`
   display: block;
   text-align: center;
 
-  .profile-name {
+  .profile-intro {
+    max-width: 690px;
+    margin: 2rem auto;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .profile-location {
-    color: #f1fdff;
-    font-weight: 700;
-
-    span {
-      display: inline-block;
-      color: #ff6d38;
-
-      animation: wobble-ver-left 5s both infinite;
-      animation-delay: 5s;
-    }
-  }
-
-  .profile-links {
-    width: 50%;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 1.5rem auto;
-
-    a {
-      display: inline-block;
-      padding: 0.375rem 0.75rem;
-    
-      background-color: #f1fdff;
-      border: 1px solid black;
-      border-radius: 0.25rem;
-      transition: all 0.15s ease;
-
-      &:hover {
-        color: green;
-        border-color: green;
-        transform: scale(1.05);
-      }
-
-      .fa-icon {
-        margin-right: 5px;
-      }
-
-      .fa-linkedin-square {
-        color: rgb(0, 119, 181);
-      }
-    }
   }
 
   /* Element wobble effect */
@@ -85,16 +43,12 @@ const ProfileStyles = styled.header`
     }
   }
 
-
-  @media (max-width: 750px) {
-    .profile-links {
-      display: block;
-  
-      a {
-        margin: 5px 0;
-      }
+  @media (max-width: ${props => props.theme.mobileWidth}) {
+    .profile-intro {
+      max-width: 290px;
+      margin: 0 auto;
+      flex-direction: column;
     }
-    
   }
 `
 

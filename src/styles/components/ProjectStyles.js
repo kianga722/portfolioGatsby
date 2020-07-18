@@ -3,11 +3,29 @@ import styled from 'styled-components';
 const ProjectStyles = styled.article`
   margin: 10px 10px 30px 10px;
   padding: 10px;
-
-  background-color: #f1fdff;
-  border: 1px solid black;
+  background-color: ${props => props.theme.white};
+  border: 2px solid ${props => props.theme.lightGray};
   border-radius: 5px;
 
+  /* Tilt Animations */
+  --rX: 0;
+  --rY: 0;
+  transform: perspective(100rem) rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+
+  &:hover {
+    border: 2px solid ${props => props.theme.red};
+    .project-title {
+        color: ${props => props.theme.red};
+      /* Underline from center effect */
+      &::after {
+        transform: translateX(-50%) scaleX(1);
+      }
+    }
+    .project-info {
+      color: ${props => props.theme.red};
+    }
+  }
+  
   a {
     display: block;
   }
@@ -84,7 +102,6 @@ const ProjectStyles = styled.article`
 
     .view,
     .github {
-      display: inline-block;
       padding: 0.375rem 0.75rem;
       margin: 5px 0;
 
@@ -93,23 +110,42 @@ const ProjectStyles = styled.article`
       transition: all 0.15s ease;
 
       &:hover {
-        color: orange;
-        border-color: orange;
+        color: ${props => props.theme.red};
+        border-color: ${props => props.theme.red};
         transform: scale(1.05);
       }
+    }
+
+    .github {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
   .project-title {
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
     margin-top: 10px;
     margin-bottom: 15px;
+    padding-bottom: 5px;
 
     font-size: 2rem;
     font-weight: 700;
 
-    &:hover {
-      text-shadow: 0 0 3px #ffcfcf;
-    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%) scaleX(0);
+        transform-origin: 50% 50%;
+        width: 100%;
+        height: 2px;
+        background-color: ${props => props.theme.red};
+        transition: transform 250ms;
+      }
   }
 
   .project-info {
@@ -118,15 +154,19 @@ const ProjectStyles = styled.article`
     line-height: 1.3rem;
   }
 
-  @media (max-width: 750px) {
+  @media (max-width: ${props => props.theme.mobileWidth}) {
     width: 69%;
-    margin: 30px auto;
+    margin: 1rem auto;
+
+    .live {
+      height: unset;
+    }
 
     .project-links .view {
       display: none;
     }
     
-    .is-visible {
+    &.is-visible {
       transform: translateX(-3000px);
       animation: come-in 0.3s ease forwards;
     }

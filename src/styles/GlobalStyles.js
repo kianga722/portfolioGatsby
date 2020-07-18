@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import bgPic from '../images/nyc.jpg';
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -53,7 +52,8 @@ const GlobalStyles = createGlobalStyle`
 
   /* Fonts */
   body {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Arial', sans-serif;
+    color: ${props => props.theme.black}
   }
 
   /* Links */
@@ -63,23 +63,8 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  /* Background Mousemove effect */
   body {
-    background-color: black;
-  }
-
-  .page-wrap {
-    position: absolute;
-    width: 100vw;
-
-    background: url(${bgPic});
-    background-repeat: repeat;
-    background-size: cover;
-    background-attachment: fixed;
-
-    --x: 0;
-    --y: 0;
-    background-position: calc(50% - var(--x)) calc(50% - var(--y));
+    background-color: ${props => props.theme.background};
   }
 
   /* Content */
@@ -89,10 +74,9 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 auto 69px;
   }
 
-  @media (max-width: 750px) {
-    .page-wrap {
-      background-size: unset;
-      background-position: 75%;
+  @media (max-width: ${props => props.theme.mobileWidth}) {
+    .content {
+      margin: 0 1rem; 
     }
   }
 `;

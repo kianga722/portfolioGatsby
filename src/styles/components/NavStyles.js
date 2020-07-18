@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 const NavStyles = styled.header`
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 999;
 
-  background-color: #abcbff;
+  background-color: ${props => props.theme.lightBlue};
   .nav-fixed {
     max-width: 1000px;
     display: flex;
@@ -16,10 +17,6 @@ const NavStyles = styled.header`
 
     font-size: 1.2rem;
 
-    .email-address {
-      display: none;
-    }
-
     .brand {
       display: flex;
       align-items: center;
@@ -27,54 +24,81 @@ const NavStyles = styled.header`
       font-weight: 700;
     }
 
-    .email,
-    .github {
-      display: inline-block;
-      padding: 0.375rem 0.55rem;
-
-      border: 1px solid black;
-      border-radius: 0.25rem;
-      transition: all 0.15s ease;
-    }
-
-    a.email {
-      margin-right: 10px;
-    }
-
-    .brand:hover,
-    .email:hover,
-    .github:hover {
-      color: green;
-      border-color: green;
-      transform: scale(1.05);
-    }
-
-    .fa-github {
-      margin-right: 5px;
-    }
-
-    .highlight:hover {
-      text-shadow: 0 0 3px #ffcfcf;
-    }
-  }
-
-    @media (max-width: 750px) {
-      .nav-fixed {
-        .email-address {
-          display: block;
-          margin: 0 auto;
-          font-weight: 700;
+    .email-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a.email {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      span.highlight {
+        margin-left: 7px;
+        position: relative;
+        top: 3px;
+        padding-bottom: 6px;
+        /* Underline from center effect */
+        &::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%) scaleX(0);
+          transform-origin: 50% 50%;
+          width: 100%;
+          height: 2px;
+          background-color: ${props => props.theme.red};
+          transition: transform 250ms;
         }
-
-        .brand,
-        .email-wrapper,
-        .github {
-          display: none;
+        
+        &:hover {
+          color: ${props => props.theme.red};
+          &::after {
+            transform: translateX(-50%) scaleX(1);
+          }
         }
       }
     }
 
+    .github {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        margin-left: 7px;
+      }
+    }
+
+    .email,
+    .github {
+      transition: all 0.15s ease;
+    }
+
+
+    .brand:hover,
+    .email:hover,
+    .github:hover {
+      color: ${props => props.theme.red};
+      border-color: ${props => props.theme.red};
+      transform: scale(1.05);
+    }
   }
-`
+
+  @media (max-width: ${props => props.theme.mobileWidth}) {
+    .nav-fixed {
+      .brand {
+        display: none;
+      }
+      .github {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+
+`;
 
 export default NavStyles;

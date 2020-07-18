@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import profilePic from '../images/profPic.png';
 
 import AvatarFlipStyles from '../styles/components/AvatarFlipStyles';
@@ -24,17 +24,11 @@ const AvatarFlip = () => {
       onClick={handleClick}
       onAnimationEnd={() => setJump(false)}
     >
-      <div className='flip-inner'>
-        <img
-          className='flip-front'
-          src={profilePic}
-          alt='profile pic'
-        />
-        <div className='flip-back'>
-          <span>A</span>
-          <span>K</span>
-        </div>
-      </div>
+      <img
+        className='flip-front'
+        src={profilePic}
+        alt='profile pic'
+      />
     </AvatarFlipStyles>
   )
 }

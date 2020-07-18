@@ -11,7 +11,7 @@ const ProjectContainerStyles = styled.section`
     display: inline-block;
     padding-bottom: 10px;
   
-    color: #f1fdff;
+    color: ${props => props.theme.white};
     font-size: 2rem;
     font-weight: 700;
     text-shadow: 0 1px 3px black;
@@ -25,8 +25,8 @@ const ProjectContainerStyles = styled.section`
       transform: translateX(-50%) scaleX(0);
       transform-origin: 50% 50%;
       width: 100%;
-      height: 1px;
-      background-color: white;
+      height: 3px;
+      background-color: ${props => props.theme.darkBlue};
       transition: transform 250ms;
     }
     
@@ -44,9 +44,9 @@ const ProjectContainerStyles = styled.section`
   }
 
 
-  @media (max-width: 750px) {
+  @media (max-width: ${props => props.theme.mobileWidth}) {
       .projects-display {
-        display: block;
+        grid-template-columns: 1fr;
       }
   }
 `

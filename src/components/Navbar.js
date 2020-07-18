@@ -8,10 +8,6 @@ const Navbar = () => {
     <NavStyles>
       <nav className='nav-fixed'>
 
-        <div className='email-address highlight'>
-          kianga722@gmail.com
-        </div>
-
         <a href='/' className='brand'>
           <div>
             Andrew Kiang
@@ -35,7 +31,7 @@ const Navbar = () => {
           className='github'
         >
           <FaGithub className='fa-github' />
-          GitHub
+          <span>GitHub</span>
         </a>
 
       </nav>
