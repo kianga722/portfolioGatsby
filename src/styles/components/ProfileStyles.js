@@ -10,6 +10,20 @@ const ProfileStyles = styled.header`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+      
+      .flip-front {
+        transition: border 1s ease;
+        border: 5px solid ${props => props.theme.red};
+      }
+      p {
+        b {
+          transition: color 1s ease;
+          color: ${props => props.theme.red};
+        }
+      }
+    }
   }
 
   /* Element wobble effect */
