@@ -47,7 +47,7 @@ const DarkModeToggleStyles = styled.div`
       left : 20px; 
     }
     .dmcheck:checked + label {  
-      background-color: #0013fb;
+      background-color: #009dfb;
     }
   }
 
