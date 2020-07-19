@@ -15,12 +15,12 @@ const ProfileStyles = styled.header`
       
       .flip-front {
         transition: border 1s ease;
-        border: 5px solid ${props => props.theme.red};
+        border: 5px solid ${props => props.theme.highlight};
       }
       p {
         b {
           transition: color 1s ease;
-          color: ${props => props.theme.red};
+          color: ${props => props.theme.highlight};
         }
       }
     }

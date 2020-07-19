@@ -3,8 +3,8 @@ import styled from 'styled-components';
 const ProjectStyles = styled.article`
   margin: 10px 10px 30px 10px;
   padding: 10px;
-  background-color: ${props => props.theme.white};
-  border: 2px solid ${props => props.theme.lightGray};
+  background-color: ${props => props.theme.cardBackground};
+  border: 2px solid ${props => props.theme.border};
   border-radius: 5px;
 
   /* Tilt Animations */
@@ -13,16 +13,16 @@ const ProjectStyles = styled.article`
   transform: perspective(100rem) rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
 
   &:hover {
-    border: 2px solid ${props => props.theme.red};
+    border: 2px solid ${props => props.theme.highlight};
     .project-title {
-        color: ${props => props.theme.red};
+        color: ${props => props.theme.highlight};
       /* Underline from center effect */
       &::after {
         transform: translateX(-50%) scaleX(1);
       }
     }
     .project-info {
-      color: ${props => props.theme.red};
+      color: ${props => props.theme.highlight};
     }
   }
   
@@ -105,13 +105,13 @@ const ProjectStyles = styled.article`
       padding: 0.375rem 0.75rem;
       margin: 5px 0;
 
-      border: 1px solid black;
+      border: 1px solid ${props => props.theme.text};
       border-radius: 0.25rem;
       transition: all 0.15s ease;
 
       &:hover {
-        color: ${props => props.theme.red};
-        border-color: ${props => props.theme.red};
+        color: ${props => props.theme.highlight};
+        border-color: ${props => props.theme.highlight};
         transform: scale(1.05);
       }
     }
@@ -135,17 +135,17 @@ const ProjectStyles = styled.article`
     font-weight: 700;
 
     &::after {
-        content: '';
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%) scaleX(0);
-        transform-origin: 50% 50%;
-        width: 100%;
-        height: 2px;
-        background-color: ${props => props.theme.red};
-        transition: transform 250ms;
-      }
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%) scaleX(0);
+      transform-origin: 50% 50%;
+      width: 100%;
+      height: 2px;
+      background-color: ${props => props.theme.highlight};
+      transition: transform 250ms;
+    }
   }
 
   .project-info {

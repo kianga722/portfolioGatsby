@@ -7,7 +7,7 @@ const NavStyles = styled.header`
   right: 0;
   z-index: 999;
 
-  background-color: ${props => props.theme.lightBlue};
+  background-color: ${props => props.theme.navBackground};
   .nav-fixed {
     max-width: 1000px;
     display: flex;
@@ -49,12 +49,12 @@ const NavStyles = styled.header`
           transform-origin: 50% 50%;
           width: 100%;
           height: 2px;
-          background-color: ${props => props.theme.red};
+          background-color: ${props => props.theme.highlight};
           transition: transform 250ms;
         }
         
         &:hover {
-          color: ${props => props.theme.red};
+          color: ${props => props.theme.highlight};
           &::after {
             transform: translateX(-50%) scaleX(1);
           }
@@ -80,8 +80,8 @@ const NavStyles = styled.header`
     .brand:hover,
     .email:hover,
     .github:hover {
-      color: ${props => props.theme.red};
-      border-color: ${props => props.theme.red};
+      color: ${props => props.theme.highlight};
+      border-color: ${props => props.theme.highlight};
       transform: scale(1.05);
     }
   }

@@ -4,7 +4,7 @@ const AvatarFlipStyles = styled.div`
   .flip-front {
     width: 90px;
     height: 90px;
-    border: 5px solid ${props => props.theme.lightGray};
+    border: 5px solid ${props => props.theme.border};
     border-radius: 50%;
     cursor: pointer;
   }

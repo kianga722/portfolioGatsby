@@ -50,10 +50,17 @@ const GlobalStyles = createGlobalStyle`
     border-spacing: 0;
   }
 
-  /* Fonts */
+  /* Button Reset */
+  button {
+    background: transparent;
+    border: none;
+  }
+
+  /* Fonts and Background */
   body {
     font-family: 'Arial', sans-serif;
-    color: ${props => props.theme.black}
+    color: ${props => props.theme.text};
+    background-color: ${props => props.theme.background};
   }
 
   /* Links */
@@ -63,16 +70,82 @@ const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
-  body {
-    background-color: ${props => props.theme.background};
-  }
-
   /* Content */
   .content {
+    position: relative;
     max-width: 1000px;
     padding-top: 69px;
     margin: 0 auto 69px;
   }
+
+  /* Dark Mode */
+  body.dark-mode {
+    color: ${props => props.theme.textDark};
+    background-color: ${props => props.theme.backgroundDark};
+    header:first-child {
+      background-color: ${props => props.theme.navBackgroundDark};
+      .nav-fixed {
+        .email-wrapper {
+          span.highlight {
+            &::after {
+              background-color: ${props => props.theme.highlightDark};
+            }
+            &:hover {
+              color: ${props => props.theme.highlightDark};
+            }
+          }
+        }
+        .brand:hover,
+        .email:hover,
+        .github:hover {
+          color: ${props => props.theme.highlightDark};
+          border-color: ${props => props.theme.highlightDark};
+        }
+      }
+    }
+    .profile-intro {
+      &:hover {
+        .flip-front {
+          border: 5px solid ${props => props.theme.highlightDark};
+        }
+        p {
+          b {
+            color: ${props => props.theme.highlightDark};
+          }
+        }
+      }
+    }
+    .projects-display {
+      article {
+        background-color: ${props => props.theme.cardBackgroundDark};
+        &:hover {
+          border: 2px solid ${props => props.theme.highlightDark};
+          .project-title {
+            color: ${props => props.theme.highlightDark};
+          }
+          .project-info {
+            color: ${props => props.theme.highlightDark};
+          }
+        }
+        .project-links {
+          .view,
+          .github {
+            border: 1px solid ${props => props.theme.textDark};
+            &:hover {
+              color: ${props => props.theme.highlightDark};
+              border-color: ${props => props.theme.highlightDark};
+            }
+          }
+        }
+        .project-title {
+          &::after {
+            background-color: ${props => props.theme.highlightDark};
+          }
+        }
+      }
+    }
+  }
+  
 
   @media (max-width: ${props => props.theme.mobileWidth}) {
     .content {

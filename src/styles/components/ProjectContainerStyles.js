@@ -11,7 +11,7 @@ const ProjectContainerStyles = styled.section`
     display: inline-block;
     padding-bottom: 10px;
   
-    color: ${props => props.theme.white};
+    color: ${props => props.theme.cardBackground};
     font-size: 2rem;
     font-weight: 700;
     text-shadow: 0 1px 3px black;
@@ -26,7 +26,7 @@ const ProjectContainerStyles = styled.section`
       transform-origin: 50% 50%;
       width: 100%;
       height: 3px;
-      background-color: ${props => props.theme.darkBlue};
+      background-color: ${props => props.theme.underline};
       transition: transform 250ms;
     }
     
