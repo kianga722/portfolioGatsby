@@ -16,12 +16,12 @@ const Navbar = () => {
 
         <div className='email-wrapper'>
           <a
-            href='mailto:kianga722@gmail.com' className='email'
+            href='mailto:andrewk55@protonmail.com' className='email'
           >
             <FaEnvelopeSquare />
           </a>
           <span className='highlight'>
-            kianga722@gmail.com
+            andrewk55@protonmail.com
           </span>
         </div>
     
