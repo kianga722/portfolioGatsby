@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import Project from './Project';
+import tacomaps from '../images/tacomaps.png'
 import workout531 from '../images/531workout.png'
 import playlistAnalyze from '../images/playlistAnalyze.png'
 import layoutscroll from '../images/layoutscroll.png'
@@ -51,21 +52,28 @@ const ProjectContainer = () => {
       <h1 className='title'>Projects</h1>
       <div className='projects-display'>
         <Project
-          site='https://workout531.herokuapp.com/'
+          site='https://taco.fyi'
+          repo='https://github.com/kianga722/taco-maps-serverless'
+          image={tacomaps}
+          title='taco-maps'
+          description='Displays nearby taco spots using Leaflet, Mapbox, Yelp, and Zomato APIs'
+        />
+        <Project
+          site='https://workout.taco.fyi'
           repo='https://github.com/kianga722/531workout'
           image={workout531}
           title='531workout'
           description='Generates workouts for the 5/3/1 lifting program using React, Node, and MongoDB '
         />
         <Project
-          site='https://nsong.herokuapp.com'
+          site='https://song.taco.fyi'
           repo='https://github.com/kianga722/nsong'
           image={nsong}
           title='nsong'
           description='Displays recent songs from popular Youtube channels using React, Express, and the Youtube API'
         />
         <Project
-          site='https://d3analyze.herokuapp.com/'
+          site='https://spotify.taco.fyi'
           repo='https://github.com/kianga722/playlistAnalyze'
           image={playlistAnalyze}
           title='playlistAnalyze'

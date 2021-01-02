@@ -5,7 +5,7 @@
  */
 
 module.exports = {
-  pathPrefix: "/portfolioGatsby",
+  pathPrefix: "/",
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
