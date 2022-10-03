@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
-const DarkModeToggleStyles = styled.div`
-  margin-right: 1rem;
+const DarkModeToggleStyles = styled.article`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-right: 0;
+
   .light-icon,
   .dark-icon {
     cursor: pointer;
@@ -49,10 +50,6 @@ const DarkModeToggleStyles = styled.div`
     .dmcheck:checked + label {  
       background-color: #009dfb;
     }
-  }
-
-  @media (max-width: ${props => props.theme.mobileWidth}) {
-    margin-right: 0;
   }
 `;
 

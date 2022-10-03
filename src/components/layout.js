@@ -3,18 +3,17 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from '../styles/GlobalStyles';
 
 const theme = {
-  mobileWidth: '768px',
   background: '#F5F5F5',
+  navBackground: '#abcbff',
   text: '#3a3a3a',
   cardBackground: '#f1fdff',
-  navBackground: '#abcbff',
-  underline: '#808c9f',
-  highlight: '#e2000e',
+  highlight: '#0e5e17',
   border: '#dfdfdf',
   backgroundDark: '#282c35',
-  textDark: '#d2e5e6',
-  cardBackgroundDark: '#010120',
   navBackgroundDark: '#5012aa',
+  textDark: '#d2e5e6',
+  textTitleDark: '#AA84E1',
+  cardBackgroundDark: '#010120',
   highlightDark: '#89ff7f',
 }
 

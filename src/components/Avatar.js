@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import profilePic from '../images/profPic.png';
 
-import AvatarFlipStyles from '../styles/components/AvatarFlipStyles';
+import AvatarStyles from '../styles/components/AvatarStyles';
 
-const AvatarFlip = () => {
+const Avatar = () => {
   const [jump, setJump] = useState(false)
 
   const resetAnimation = () => {
@@ -19,7 +19,7 @@ const AvatarFlip = () => {
   }
 
   return (
-    <AvatarFlipStyles
+    <AvatarStyles
       className={`flip-coin ${jump ? 'jump' : ''}`}
       onClick={handleClick}
       onAnimationEnd={() => setJump(false)}
@@ -29,8 +29,8 @@ const AvatarFlip = () => {
         src={profilePic}
         alt='profile pic'
       />
-    </AvatarFlipStyles>
+    </AvatarStyles>
   )
 }
 
-export default AvatarFlip;
+export default Avatar;

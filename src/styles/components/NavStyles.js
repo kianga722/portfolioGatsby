@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
 const NavStyles = styled.header`
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
 
   background-color: ${props => props.theme.navBackground};
+
   .nav-fixed {
-    max-width: 1000px;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     padding: 0.75rem 1rem;
@@ -18,8 +19,7 @@ const NavStyles = styled.header`
     font-size: 1.2rem;
 
     .brand {
-      display: flex;
-      align-items: center;
+      display: none;
     
       font-weight: 700;
     }
@@ -29,16 +29,19 @@ const NavStyles = styled.header`
       display: flex;
       justify-content: center;
       align-items: center;
+
       a.email {
         display: flex;
         justify-content: center;
         align-items: center;
       }
+
       span.highlight {
         margin-left: 7px;
         position: relative;
         top: 3px;
         padding-bottom: 6px;
+
         /* Underline from center effect */
         &::after {
           content: '';
@@ -66,8 +69,9 @@ const NavStyles = styled.header`
       display: flex;
       justify-content: center;
       align-items: center;
+
       span {
-        margin-left: 7px;
+        display: none;
       }
     }
 
@@ -75,7 +79,6 @@ const NavStyles = styled.header`
     .github {
       transition: all 0.15s ease;
     }
-
 
     .brand:hover,
     .email:hover,
@@ -86,14 +89,16 @@ const NavStyles = styled.header`
     }
   }
 
-  @media (max-width: ${props => props.theme.mobileWidth}) {
+  @media (min-width: 768px) {
     .nav-fixed {
       .brand {
-        display: none;
+        display: flex;
+        align-items: center;
       }
       .github {
         span {
-          display: none;
+          display: block;
+          margin-left: 7px;
         }
       }
     }

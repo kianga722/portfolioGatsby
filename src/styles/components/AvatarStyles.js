@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
-const AvatarFlipStyles = styled.div`
+const AvatarStyles = styled.picture`
+  margin-top: 2rem;
+  display: block;
+
   .flip-front {
     width: 90px;
     height: 90px;
@@ -45,4 +48,4 @@ const AvatarFlipStyles = styled.div`
   }
 `
 
-export default AvatarFlipStyles;
+export default AvatarStyles;

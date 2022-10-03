@@ -1,16 +1,22 @@
 import styled from 'styled-components';
 
 const ProjectStyles = styled.article`
-  margin: 10px 10px 30px 10px;
+  width: 69%;
+  margin: 1rem auto;
   padding: 10px;
+
   background-color: ${props => props.theme.cardBackground};
   border: 2px solid ${props => props.theme.border};
   border-radius: 5px;
 
-  /* Tilt Animations */
-  --rX: 0;
-  --rY: 0;
-  transform: perspective(100rem) rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg));
+  &.is-visible {
+    transform: translateX(-3000px);
+    animation: come-in 0.3s ease forwards;
+  }
+
+  @keyframes come-in {
+    to { transform: translateX(0); }
+  }
 
   &:hover {
     border: 2px solid ${props => props.theme.highlight};
@@ -26,20 +32,19 @@ const ProjectStyles = styled.article`
     }
   }
   
-  a {
-    display: block;
-  }
   .fa-icon {
     margin-right: 5px;
   }
 
   .live {
     position: relative;
-    height: 22vh;
+    height: unset;
     overflow: hidden;
 
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
 
       transition: all 1s ease;
     }
@@ -100,6 +105,10 @@ const ProjectStyles = styled.article`
     justify-content: space-evenly;
     margin-top: 9px;
 
+    .view {
+      display: none;
+    }
+
     .view,
     .github {
       padding: 0.375rem 0.75rem;
@@ -154,25 +163,20 @@ const ProjectStyles = styled.article`
     line-height: 1.3rem;
   }
 
-  @media (max-width: ${props => props.theme.mobileWidth}) {
-    width: 69%;
-    margin: 1rem auto;
+  @media (min-width: 1024px) {
+    width: unset;
+
+    /* Tilt Animations */
+    --rX: 0;
+    --rY: 0;
+    transform: perspective(100rem) rotateX(calc(var(--rX) * 1deg)) rotateY(calc(var(--rY) * 1deg))!important;
 
     .live {
-      height: unset;
+      height: 22vh;
     }
 
     .project-links .view {
-      display: none;
-    }
-    
-    &.is-visible {
-      transform: translateX(-3000px);
-      animation: come-in 0.3s ease forwards;
-    }
-
-    @keyframes come-in {
-      to { transform: translateX(0); }
+      display: block;
     }
   }
 
