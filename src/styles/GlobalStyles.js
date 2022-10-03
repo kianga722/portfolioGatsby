@@ -244,14 +244,6 @@ const GlobalStyles = createGlobalStyle`
     }
 
   }
-
-  @media (min-width: 1000px) {
-    .content {
-      .content-top {
-        padding: 1rem 0;
-      }
-    }
-  }
 `;
 
 export default GlobalStyles;
