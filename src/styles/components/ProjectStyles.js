@@ -5,8 +5,7 @@ const ProjectStyles = styled.article`
   margin: 1rem auto;
   padding: 10px;
 
-  background-color: ${props => props.theme.cardBackground};
-  border: 2px solid ${props => props.theme.border};
+  background-color: ${props => props.theme.background};
   border-radius: 5px;
 
   &.is-visible {

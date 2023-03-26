@@ -3,38 +3,7 @@ import styled from 'styled-components';
 const ProjectContainerStyles = styled.section`
   position: relative;
   max-width: 1200px;
-  margin: 0 auto;
-
-  .bg {
-    animation: slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(45deg, #000 50%, ${props => props.theme.navBackground} 50%);
-    bottom:0;
-    left:-50%;
-    opacity:.5;
-    position: fixed;
-    right:-50%;
-    top:0;
-    z-index:-1;
-  }
-
-  .bg2 {
-    animation-direction: alternate-reverse;
-    animation-duration:4s;
-  }
-
-  .bg3 {
-    animation-duration:5s;
-  }
-
-  @keyframes slide {
-    0% {
-      transform:translateX(-25%);
-    }
-    100% {
-      transform:translateX(25%);
-    }
-  }
-
+  margin: 20rem auto 0;
 
   section {
     position: absolute;
@@ -78,8 +47,12 @@ const ProjectContainerStyles = styled.section`
     &:hover {
       .title {
         h1 {
+          transition: color 1s ease;
+          color: ${props => props.theme.highlight};
+
           &::after {
             transform: translateX(-50%) scaleX(1);
+            background-color: ${props => props.theme.highlight};
           }
         }
       }

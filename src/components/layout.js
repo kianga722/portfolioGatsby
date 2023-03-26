@@ -3,18 +3,11 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from '../styles/GlobalStyles';
 
 const theme = {
-  background: '#F5F5F5',
-  navBackground: '#abcbff',
-  text: '#3a3a3a',
-  cardBackground: '#f1fdff',
-  highlight: '#0e5e17',
-  border: '#dfdfdf',
-  backgroundDark: '#282c35',
-  navBackgroundDark: '#5012aa',
-  textDark: '#d2e5e6',
-  textTitleDark: '#AA84E1',
-  cardBackgroundDark: '#010120',
-  highlightDark: '#89ff7f',
+  background: 'rgba(48, 56, 60, 0.9)',
+  black: '#000',
+  text: '#fff',
+  brandTextColor: '#1fffff',
+  highlight: '#1aec08'
 }
 
 export default function Layout({ children }) {

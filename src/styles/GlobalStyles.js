@@ -60,7 +60,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Arial', sans-serif;
     color: ${props => props.theme.text};
-    background-color: ${props => props.theme.background};
+    background-color: ${props => props.theme.black};
   }
 
   /* Links */
@@ -74,9 +74,9 @@ const GlobalStyles = createGlobalStyle`
 
   /* Content */
   .content {
-    position: relative;
-
-    background-color: ${props => props.theme.background};
+    position: absolute;
+    top: 0;
+    width: 100vw;
 
     .content-top {
       max-width: 1200px;
@@ -85,164 +85,6 @@ const GlobalStyles = createGlobalStyle`
       display: flex;
       justify-content: space-between;
     }
-  }
-
-  /* Dark Mode */
-  body.dark-mode {
-    color: ${props => props.theme.textDark};
-    background-color: ${props => props.theme.backgroundDark};
-
-    header:first-child {
-      background-color: ${props => props.theme.navBackgroundDark};
-
-      .nav-fixed {
-        .email-wrapper {
-          span.highlight {
-            &::after {
-              background-color: ${props => props.theme.highlightDark};
-            }
-            &:hover {
-              color: ${props => props.theme.highlightDark};
-            }
-          }
-        }
-        .brand:hover,
-        .email:hover,
-        .github:hover {
-          color: ${props => props.theme.highlightDark};
-          border-color: ${props => props.theme.highlightDark};
-        }
-      }
-    }
-    
-    .content {
-      background-color: ${props => props.theme.backgroundDark};
-
-      .content-top {
-        article {
-          a {
-            color: ${props => props.theme.highlightDark};
-            border-color: ${props => props.theme.highlightDark};
-
-            &:hover {
-              color: ${props => props.theme.highlightDark};
-              border-color: ${props => props.theme.highlightDark};
-            }
-          }
-        }
-      }
-      
-      .profile {
-        p {
-          b {
-            color: ${props => props.theme.textTitleDark};
-          }
-        }
-
-        h1 {
-          color: ${props => props.theme.textTitleDark};
-          text-shadow: 0 1px 3px #242a7d;
-
-          &::after {
-            background-color: ${props => props.theme.textTitleDark};
-          }
-        }
-
-        .about-me {
-          background-color: ${props => props.theme.backgroundDark};
-
-          .description {
-            .skills {
-              ul {
-                li {
-                  span {
-                    color: ${props => props.theme.textTitleDark};
-                  }
-                }
-              }
-            }
-          }
-        }
-
-        &:hover {
-          .flip-front {
-            border: 5px solid ${props => props.theme.highlightDark};
-          }
-
-          p {
-            b {
-              color: ${props => props.theme.highlightDark};
-            }
-
-            &.intro-name {
-              b {
-                color: ${props => props.theme.highlightDark};
-              }
-            }
-          }
-
-          .description {
-            .skills {
-              ul {
-                li {
-                  span {
-                    color: ${props => props.theme.highlightDark};
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .bg {
-        background-image: linear-gradient(45deg, #000 50%, ${props => props.theme.navBackgroundDark} 50%);
-      }
-      
-      section {
-        .title {
-          background: ${props => props.theme.backgroundDark};
-          color: ${props => props.theme.textTitleDark};
-
-          h1 {
-            &::after {
-              background-color: ${props => props.theme.textTitleDark};
-            }
-          }
-        }
-
-        .projects-display {
-          article {
-            background-color: ${props => props.theme.cardBackgroundDark};
-            &:hover {
-              border: 2px solid ${props => props.theme.highlightDark};
-              .project-title {
-                color: ${props => props.theme.highlightDark};
-              }
-              .project-info {
-                color: ${props => props.theme.highlightDark};
-              }
-            }
-            .project-links {
-              .view,
-              .github {
-                border: 1px solid ${props => props.theme.textDark};
-                &:hover {
-                  color: ${props => props.theme.highlightDark};
-                  border-color: ${props => props.theme.highlightDark};
-                }
-              }
-            }
-            .project-title {
-              &::after {
-                background-color: ${props => props.theme.highlightDark};
-              }
-            }
-          }
-        }
-      }
-    }
-
   }
 `;
 

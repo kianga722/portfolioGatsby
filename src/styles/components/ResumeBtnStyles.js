@@ -6,6 +6,7 @@ const ResumeBtnStyles = styled.article`
     a {
         padding: 0.375rem 0.75rem;
 
+        background: ${props => props.theme.black};
         color: ${props => props.theme.highlight};
         font-weight: 700;
         border: 1px solid ${props => props.theme.highlight};

@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 
 const AvatarStyles = styled.picture`
-  margin-top: 2rem;
-  display: block;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
 
-  .flip-front {
+  img {
     width: 90px;
     height: 90px;
-    border: 5px solid ${props => props.theme.border};
+
+    border: 5px solid ${props => props.theme.text};
     border-radius: 50%;
     cursor: pointer;
   }
-  
+
   &.jump {
     animation: wobble 1s both;
   }

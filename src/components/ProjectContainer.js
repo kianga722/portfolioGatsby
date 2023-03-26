@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react';
 import Project from './Project';
-import tacomaps from '../images/tacomaps.png'
-import workout531 from '../images/531workout.png'
-import playlistAnalyze from '../images/playlistAnalyze.png'
-import layoutscroll from '../images/layoutscroll.png'
-import motivator from '../images/motivator.png'
-import nsong from '../images/nsong.png'
-import ytshuffle from '../images/ytshuffle.png'
-import cnotify from '../images/cnotify.png'
-import statusw from '../images/statusw2.png'
-import yourinfo from '../images/yourinfo.png'
+import tacomaps from '../assets/images/tacomaps.png'
+import workout531 from '../assets/images/531workout.png'
+import playlistAnalyze from '../assets/images/playlistAnalyze.png'
+import layoutscroll from '../assets/images/layoutscroll.png'
+import motivator from '../assets/images/motivator.png'
+import nsong from '../assets/images/nsong.png'
+import ytshuffle from '../assets/images/ytshuffle.png'
+import cnotify from '../assets/images/cnotify.png'
+import statusw from '../assets/images/statusw2.png'
+import yourinfo from '../assets/images/yourinfo.png'
 
 import ProjectContainerStyles from '../styles/components/ProjectContainerStyles';
 
@@ -48,10 +48,6 @@ const ProjectContainer = () => {
 
   return (
     <ProjectContainerStyles>
-      <div class="bg"></div>
-      <div class="bg bg2"></div>
-      <div class="bg bg3"></div>
-
       <section>
         <div className='title'>
           <h1>Past Projects</h1>

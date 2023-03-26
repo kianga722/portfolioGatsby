@@ -7,7 +7,7 @@ const NavStyles = styled.header`
   right: 0;
   z-index: 999;
 
-  background-color: ${props => props.theme.navBackground};
+  background-color: ${props => props.theme.black};
 
   .nav-fixed {
     max-width: 1200px;
@@ -94,6 +94,8 @@ const NavStyles = styled.header`
       .brand {
         display: flex;
         align-items: center;
+
+        color: ${props => props.theme.highlight};
       }
       .github {
         span {
