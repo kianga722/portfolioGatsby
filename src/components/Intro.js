@@ -8,7 +8,7 @@ const Intro = () => {
       <section>
         <p className='intro-title'>Hey! I'm</p>
         <p className='intro-name'><b>Andrew Kiang</b></p>
-        <p>software developer for the web.</p>
+        <p>software developer for the web</p>
       </section>
     </IntroStyles>
   )
